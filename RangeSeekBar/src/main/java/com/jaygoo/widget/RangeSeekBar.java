@@ -614,9 +614,9 @@ public class RangeSeekBar extends View {
                 }
 
                 //Intercept parent TouchEvent
-//                 if (getParent() != null) {
-//                     getParent().requestDisallowInterceptTouchEvent(true);
-//                 }
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
                 if (callback != null) {
                     callback.onStartTrackingTouch(this, currTouchSB == leftSB);
                 }
@@ -680,9 +680,9 @@ public class RangeSeekBar extends View {
                     callback.onRangeChanged(this, states[0].value, states[1].value, false);
                 }
                 //Intercept parent TouchEvent
-//                 if (getParent() != null) {
-//                     getParent().requestDisallowInterceptTouchEvent(true);
-//                 }
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
                 changeThumbActivateState(false);
                 break;
             case MotionEvent.ACTION_UP:
@@ -704,9 +704,9 @@ public class RangeSeekBar extends View {
                     callback.onRangeChanged(this, states[0].value, states[1].value, false);
                 }
                 //Intercept parent TouchEvent
-//                 if (getParent() != null) {
-//                     getParent().requestDisallowInterceptTouchEvent(true);
-//                 }
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
                 if (callback != null) {
                     callback.onStopTrackingTouch(this, currTouchSB == leftSB);
                 }
