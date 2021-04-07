@@ -624,6 +624,12 @@ public class RangeSeekBar extends View {
                 return true;
             case MotionEvent.ACTION_MOVE:
                 float x = getEventX(event);
+                float y = getEventY(event);
+                
+                if (y > this.top || y < this.bottom) {
+                    return;
+                }
+                
                 if ((seekBarMode == SEEKBAR_MODE_RANGE) && leftSB.currPercent == rightSB.currPercent) {
                     currTouchSB.materialRestore();
                     if (callback != null) {
@@ -660,9 +666,9 @@ public class RangeSeekBar extends View {
                 }
                 invalidate();
                 //Intercept parent TouchEvent
-//                 if (getParent() != null) {
-//                     getParent().requestDisallowInterceptTouchEvent(true);
-//                 }
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
                 changeThumbActivateState(true);
                 break;
             case MotionEvent.ACTION_CANCEL:
